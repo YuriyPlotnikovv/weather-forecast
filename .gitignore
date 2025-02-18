@@ -23,5 +23,9 @@ docs/
 logs/
 photos/
 plugins/
+public/
 tmp/
 node_modules/
+data/weather.json
+errors.php
+errors.log

@@ -210,7 +210,6 @@ class Weather
             $this->logError('JSON decode error: ' . json_last_error_msg());
             return null;
         }
-file_put_contents($_SERVER['DOCUMENT_ROOT'] . "/errors.php", print_r($data, true));
         return $data;
     }
 

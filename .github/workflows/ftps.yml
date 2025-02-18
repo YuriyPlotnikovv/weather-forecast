@@ -1,4 +1,4 @@
-name: Deploy to Beget via FTP
+name: Deploy weather-forecast to Beget via FTP
 
 on:
     push:
@@ -20,6 +20,14 @@ jobs:
               with:
                   node-version: '23'
 
+            - name: Cache Node.js modules
+              uses: actions/cache@v3
+              with:
+                  path: ~/.npm
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: |
+                      ${{ runner.os }}-node-
+
             - name: Install dependencies
               run: npm install
 
@@ -40,3 +48,13 @@ jobs:
                   password: ${{ secrets.FTP_PASSWORD }}
                   protocol: ftps
                   local-dir: ./
+                  exclude: |
+                      **/.git*
+                      **/node_modules/**
+                      **/src/**
+                      **/data/weather.json
+                      **/package.json
+                      **/package-lock.json
+                      **/gulpfile.js
+                      **/generateApiKeys.js
+                      **/README.md
