@@ -28,40 +28,40 @@ const paths = {
       './global/variables',
       './global/settings'
     ],
-    blocks: 'css/blocks',
-    src: 'css/style.scss',
-    dest: '../public/css',
-    watch: 'css/**/*.scss'
+    blocks: 'src/css/blocks',
+    src: 'src/css/style.scss',
+    dest: 'public/css',
+    watch: 'src/css/**/*.scss'
   },
   scripts: {
-    src: 'js/modules/*.js',
-    dest: '../public/js',
-    watch: 'js/modules/**/*.js'
+    src: 'src/js/modules/*.js',
+    dest: 'public/js',
+    watch: 'src/js/modules/**/*.js'
   },
   images: {
-    src: ['img/**/*.{jpg,jpeg,png,svg}', '!img/svg/**/*'],
-    dest: '../public/img',
-    watch: 'img/**/*.{jpg,jpeg,png,svg}'
+    src: ['src/img/**/*.{jpg,jpeg,png,svg}', '!src/img/svg/**/*'],
+    dest: 'public/img',
+    watch: 'src/img/**/*.{jpg,jpeg,png,svg}'
   },
   sprite: {
-    src: 'img/svg/**/*.svg',
-    dest: '../public/img'
+    src: 'src/img/svg/**/*.svg',
+    dest: 'public/img'
   },
   copy: {
     src: [
-      'js/vendor/*.js',
-      'css/vendor/*.css',
-      'fonts/*.{woff,woff2}',
-      'img/*.gif',
+      'src/js/vendor/*.js',
+      'src/css/vendor/*.css',
+      'src/fonts/*.{woff,woff2}',
+      'src/img/*.gif',
     ],
-    dest: '../public/'
+    dest: 'public/'
   },
-  clean: '../public'
+  clean: 'public'
 };
 
 // Styles
 const generateStyleFile = (done) => {
-  const styleFilePath = 'css/style.scss';
+  const styleFilePath = 'src/css/style.scss';
 
   let content = paths.styles.global.map(filePath => `@use "${filePath}";`).join('\n') + '\n\n';
 
@@ -138,7 +138,7 @@ const images = () => {
     .pipe(webp({quality: 80}))
     .pipe(gulp.dest(paths.images.dest))
     .on('end', () => {
-      gulp.src('img/**/*.webp')
+      gulp.src('src/img/**/*.webp')
         .pipe(gulp.dest(paths.images.dest));
     });
 };
@@ -188,7 +188,7 @@ exports.sprite = sprite;
 
 // Copy
 const copy = (done) => {
-  gulp.src(paths.copy.src, {base: '.'})
+  gulp.src(paths.copy.src, {base: 'src'})
     .pipe(gulp.dest(paths.copy.dest));
   done();
 };
