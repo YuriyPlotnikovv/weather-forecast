@@ -5,23 +5,13 @@ ErrorDocument 404 /404.php
     Options +FollowSymLinks
     RewriteEngine On
 
-#    #со страниц без слеша на слеш
-#    RewriteCond %{REQUEST_FILENAME} !-f
-#    RewriteCond %{REQUEST_URI} !\/$
-#    RewriteCond %{REQUEST_URI} !(.+).(.+)$
-#    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [R=301,L]
-#
-#    # Перенаправление с www на без www
-#    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-#    RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+    # Перенаправление с www на без www
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+</IfModule>
 
-#    # Перенаправление с http на https
-#    RewriteCond %{HTTPS} off
-#    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-    # Перенаправление всех запросов на index.php, если файл не существует
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.*)$ index.php [QSA,L]
+<IfModule mod_dir.c>
+	DirectoryIndex index.php index.html
 </IfModule>
 
 <IfModule mod_expires.c>
