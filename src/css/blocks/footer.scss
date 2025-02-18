@@ -1,0 +1,48 @@
+@use "../global/variables" as var;
+
+.footer {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+    max-width: var.$desktop-mid-width;
+    margin: 0 auto;
+    padding: 10px 100px;
+
+    @media (max-width: var.$desktop-mid-width) {
+      padding: 10px 80px;
+    }
+    @media (max-width: var.$tablet-max-width) {
+      padding: 10px 40px;
+    }
+    @media (max-width: var.$mobile-max-width) {
+      padding: 10px 20px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+
+    transition: all 0.4s ease-in-out;
+
+    &:hover, &:active {
+      opacity: 0.6;
+    }
+  }
+
+  &__info-text {
+    text-wrap: nowrap;
+  }
+
+  &__info-icon {
+    display: block;
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+  }
+}

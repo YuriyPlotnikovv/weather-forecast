@@ -1,0 +1,20 @@
+@use "../global/variables" as var;
+
+.slider {
+  &__wrapper {
+    overflow: hidden;
+    padding: 25px 25px 10px;
+  }
+
+  &__pagination {
+    position: absolute;
+
+    .swiper-pagination-bullets {
+      top: calc(100% - 10px);
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: var.$colorBlackThree;
+    }
+  }
+}

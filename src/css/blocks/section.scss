@@ -1,0 +1,30 @@
+@use "../global/variables" as var;
+
+.section {
+  position: relative;
+  display: block;
+
+  overflow: hidden;
+
+  background: rgba(var.$colorWhite, 0.15);
+  box-shadow: var.$boxShadowGlass;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+
+  &__title {
+    position: relative;
+    width: max-content;
+    margin: 0 auto;
+
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var.$colorBlackThree;
+
+    user-select: none;
+
+    @media (max-width: var.$mobile-max-width) {
+      margin: 0 auto 20px;
+    }
+  }
+}

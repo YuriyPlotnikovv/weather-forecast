@@ -1,0 +1,43 @@
+@use "../global/variables" as var;
+
+.header {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    box-sizing: border-box;
+    max-width: var.$desktop-mid-width;
+    margin: 0 auto;
+    padding: 10px 100px;
+
+    @media (max-width: var.$desktop-mid-width) {
+      gap: 30px;
+      padding: 10px 80px;
+    }
+    @media (max-width: var.$tablet-max-width) {
+      padding: 10px 40px;
+    }
+    @media (max-width: var.$mobile-max-width) {
+      padding: 10px 20px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-right: auto;
+  }
+
+  &__logo-image {
+    width: 45px;
+    height: 45px;
+  }
+
+  &__logo-text {
+    font-size: 26px;
+    font-weight: 500;
+  }
+}

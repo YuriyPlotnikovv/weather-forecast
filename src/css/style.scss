@@ -1,0 +1,15 @@
+@use "./global/fonts";
+@use "./global/variables";
+@use "./global/settings";
+
+@use "./blocks/current-weather";
+@use "./blocks/day-forecast";
+@use "./blocks/footer";
+@use "./blocks/header";
+@use "./blocks/link";
+@use "./blocks/loading";
+@use "./blocks/main";
+@use "./blocks/next-forecast";
+@use "./blocks/page";
+@use "./blocks/section";
+@use "./blocks/slider";

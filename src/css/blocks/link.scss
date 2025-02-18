@@ -1,0 +1,15 @@
+@use "../global/variables" as var;
+
+.link {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+
+  text-decoration: none;
+  color: inherit;
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+}
