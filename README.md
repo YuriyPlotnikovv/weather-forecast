@@ -7,6 +7,6 @@
 * Данные из JSON файлов, кеширование данных
 * Иконки от <a href="https://basmilius.github.io/weather-icons/" target="_blank">Bas</a>
 ---
-Деплой проекта: https://weather-forecast-week.netlify.app
+Деплой проекта: https://weather-forecast.yuriyplotnikovv.ru/
 ---
 Показывается текущая погода, прогноз на сутки и прогноз на неделю. Местоположение определяется по ip или по геолокации.
