@@ -32,9 +32,7 @@
     },
     "scripts": {
         "build": "gulp build",
-        "styles": "gulp styles",
-        "start": "gulp",
-        "build:scripts": "gulp scripts"
+        "postbuild": "node generateApiKeys.js"
     },
     "browserslist": [
         "last 2 versions",
