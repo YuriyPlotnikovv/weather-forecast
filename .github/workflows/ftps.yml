@@ -21,8 +21,8 @@ jobs:
 
     - name: Generate API keys
       env:
-        API_KEY_1: ${{ secrets.API_KEY_IP }}
-        API_KEY_2: ${{ secrets.API_KEY_TIME }}
+        API_KEY_IP: ${{ secrets.API_KEY_IP }}
+        API_KEY_TIME: ${{ secrets.API_KEY_TIME }}
       run: php generateApiKeys.php
       
     - name: FTP Deploy
