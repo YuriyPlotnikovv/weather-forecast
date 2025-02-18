@@ -1,0 +1,39 @@
+name: Deploy to Beget via FTP
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [23.x]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build project
+      run: |
+        npm install
+        npm run build
+
+    - name: Generate API keys
+      env:
+        API_KEY_1: ${{ secrets.API_KEY_IP }}
+        API_KEY_2: ${{ secrets.API_KEY_TIME }}
+      run: php generateApiKeys.php
+      
+    - name: FTP Deploy
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ftp://ftp.your-beget-domain.com
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftps
+        local-dir: ./
