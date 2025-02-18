@@ -35,7 +35,7 @@ jobs:
             - name: FTP Deploy
               uses: SamKirkland/FTP-Deploy-Action@v4.3.5
               with:
-                  server: ftp://ftp.your-beget-domain.com
+                  server: yuriypvh.beget.tech
                   username: ${{ secrets.FTP_USERNAME }}
                   password: ${{ secrets.FTP_PASSWORD }}
                   protocol: ftps
