@@ -1,12 +1,53 @@
-Проект сайта с прогнозом погоды
-==========
-Проект на PHP и JS:
-* Подключен Swiper
-* Интеграция с Api: <a href="https://api.met.no/weatherapi/locationforecast/2.0/" target="_blank">met.no</a> (погода), <a href="https://nominatim.openstreetmap.org/" target="_blank">openstreetmap.org</a> (адрес), <a href="https://ipdata.co/" target="_blank">ipdata.co</a> (координаты по ip), <a href="https://timezonedb.com/" target="_blank">timezonedb.com</a> (временной регион)
-* Английский язык (переводы из переменных), определение языка на основе предпочтений в браузере
-* Данные из JSON файлов, кеширование данных
-* Иконки от <a href="https://basmilius.github.io/weather-icons/" target="_blank">Bas</a>
+[🇬🇧 English](#english) | [🇷🇺 Русский](#русский)
+
 ---
-Деплой проекта: https://weather-forecast.yuriyplotnikovv.ru/
+
+## English
+
+# Weather Forecast Website Project
+
+A project built with PHP and JavaScript:
+
+- Integrated Swiper for smooth sliders
+- API integrations:
+    - [met.no](https://api.met.no/weatherapi/locationforecast/2.0/) (weather forecast)
+    - [openstreetmap.org](https://nominatim.openstreetmap.org/) (address lookup)
+    - [ipdata.co](https://ipdata.co/) (IP-based geolocation)
+    - [timezonedb.com](https://timezonedb.com/) (time zone information)
+- English language support (translations via variables), language detection based on browser preferences
+- Data loaded from JSON files, with caching implemented
+- Weather icons by [Bas](https://basmilius.github.io/weather-icons/)
+
 ---
-Показывается текущая погода, прогноз на сутки и прогноз на неделю. Местоположение определяется по ip или по геолокации.
+
+**Project deployment:** [https://weather-forecast.yuriyplotnikovv.ru/](https://weather-forecast.yuriyplotnikovv.ru/)
+
+---
+
+Displays current weather, 24-hour forecast, and weekly forecast. Location is determined via IP or geolocation.
+
+---
+
+## Русский
+
+# Проект сайта с прогнозом погоды
+
+Проект на PHP и JavaScript:
+
+- Подключен Swiper для удобных слайдеров
+- Интеграция с API:
+    - [met.no](https://api.met.no/weatherapi/locationforecast/2.0/) (прогноз погоды)
+    - [openstreetmap.org](https://nominatim.openstreetmap.org/) (определение адреса)
+    - [ipdata.co](https://ipdata.co/) (определение координат по IP)
+    - [timezonedb.com](https://timezonedb.com/) (информация о временной зоне)
+- Поддержка английского языка (переводы через переменные), определение языка на основе предпочтений браузера
+- Данные загружаются из JSON файлов, реализовано кеширование
+- Иконки погоды от [Bas](https://basmilius.github.io/weather-icons/)
+
+---
+
+**Деплой проекта:** [https://weather-forecast.yuriyplotnikovv.ru/](https://weather-forecast.yuriyplotnikovv.ru/)
+
+---
+
+Отображается текущая погода, прогноз на сутки и на неделю. Местоположение определяется по IP или геолокации.

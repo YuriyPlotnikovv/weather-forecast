@@ -17,7 +17,7 @@ class Weather
         $this->longitude = $this->sanitizeCoordinate($longitude);
     }
 
-    private function sanitizeCoordinate($coordinate)
+    private function sanitizeCoordinate($coordinate): string
     {
         if (!is_numeric($coordinate) || $coordinate < -180 || $coordinate > 180) {
             throw new InvalidArgumentException('Некорректное значение координаты.');
@@ -59,7 +59,7 @@ class Weather
         $this->processWeatherData($data, $zone['zoneName']);
     }
 
-    private function processWeatherData($data, $zoneName)
+    private function processWeatherData($data, $zoneName): void
     {
         $timeSeries = $data['properties']['timeseries'] ?? [];
         if (empty($timeSeries)) {
@@ -79,7 +79,7 @@ class Weather
         $this->extractForecastData($timeSeries, $zoneName);
     }
 
-    private function extractWeatherDetails($timeSeries, $zoneName)
+    private function extractWeatherDetails($timeSeries, $zoneName): array
     {
         $time = new DateTime($timeSeries['time']);
         $time->setTimezone(new DateTimeZone($zoneName));
@@ -95,7 +95,7 @@ class Weather
         ];
     }
 
-    private function extractForecastData($timeSeries, $zoneName)
+    private function extractForecastData($timeSeries, $zoneName): void
     {
         $tomorrow = new DateTime('tomorrow', new DateTimeZone($zoneName));
         $endOfNextDays = clone $tomorrow;
@@ -157,7 +157,7 @@ class Weather
         }
     }
 
-    private function isCacheValid($cacheKey)
+    private function isCacheValid($cacheKey): bool
     {
         global $LANG;
 
@@ -213,7 +213,7 @@ class Weather
         return $data;
     }
 
-    private function setCache($cacheKey, $data)
+    private function setCache($cacheKey, $data): void
     {
         global $LANG;
 
@@ -230,7 +230,7 @@ class Weather
         }
     }
 
-    private function logError($message)
+    private function logError($message): void
     {
         $timestamp = date('Y-m-d H:i:s');
         $formattedMessage = "[{$timestamp}] {$message}\n";

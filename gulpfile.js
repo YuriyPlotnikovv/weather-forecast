@@ -158,8 +158,25 @@ const sprite = () => {
 
             $(`[xlink\\:href="#${id}"]`).attr('xlink:href', `#${newId}`);
             $(`[href="#${id}"]`).attr('href', `#${newId}`);
+
             $(`[fill="url(#${id})"]`).attr('fill', `url(#${newId})`);
             $(`[stroke="url(#${id})"]`).attr('stroke', `url(#${newId})`);
+
+            $('[style]').each(function () {
+              const styleVal = $(this).attr('style');
+              if (styleVal && styleVal.includes(`url(#${id})`)) {
+                const newStyleVal = styleVal.replace(new RegExp(`url\\(#${id}\\)`, 'g'), `url(#${newId})`);
+                $(this).attr('style', newStyleVal);
+              }
+            });
+
+            $('style').each(function () {
+              const styleContent = $(this).html();
+              if (styleContent && styleContent.includes(`url(#${id})`)) {
+                const updatedStyleContent = styleContent.replace(new RegExp(`url\\(#${id}\\)`, 'g'), `url(#${newId})`);
+                $(this).html(updatedStyleContent);
+              }
+            });
           }
 
           const className = $(this).attr('class');

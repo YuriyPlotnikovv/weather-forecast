@@ -9,8 +9,8 @@ global $LANG, $MESS;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <title><?= $MESS["PAGE_TITLE"] ?></title>
-    <meta name="description" content="<?= $MESS["PAGE_DESCRIPTION"] ?>">
+    <title><?= $MESS['PAGE_TITLE'] ?></title>
+    <meta name="description" content="<?= $MESS['PAGE_DESCRIPTION'] ?>">
     <meta name="keywords" content="<?= $MESS['PAGE_KEYWORDS'] ?>">
 
     <link rel="preload" href="/public/fonts/ProximaNova-Bold.woff2" as="font"
@@ -26,7 +26,7 @@ global $LANG, $MESS;
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="/favicon.ico">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="application-name" content="<?= $MESS["PAGE_TITLE"] ?>>">
+    <meta name="application-name" content="<?= $MESS['PAGE_TITLE'] ?>>">
 
     <link href="/public/css/vendor/swiper-bundle.css" rel="stylesheet">
     <link href="<?= Tools::addTimestampToFile('/public/css/style.min.css') ?>" rel="stylesheet">
@@ -41,10 +41,10 @@ global $LANG, $MESS;
                 <use xlink:href="/public/img/sprite.svg#logo"/>
             </svg>
 
-            <p class="header__logo-text"><?= $MESS["PAGE_TITLE"] ?></p>
+            <p class="header__logo-text"><?= $MESS['PAGE_TITLE'] ?></p>
         </div>
     </div>
 </header>
 
 <main class="page__main main">
-    <h1 class="visually-hidden"><?= $MESS["MAIN_TITLE"] ?></h1>
+    <h1 class="visually-hidden"><?= $MESS['MAIN_TITLE'] ?></h1>
