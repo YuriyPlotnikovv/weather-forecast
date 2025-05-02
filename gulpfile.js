@@ -150,54 +150,45 @@ const sprite = () => {
     .pipe(cheerio({
       run: function ($, file) {
         const fileName = path.basename(file.relative, path.extname(file.relative));
-        $('*').each(function () {
-          const id = $(this).attr('id');
-          if (id) {
-            const newId = `${fileName}-${id}`;
-            $(this).attr('id', newId);
+        const idMap = {};
 
-            $(`[xlink\\:href="#${id}"]`).attr('xlink:href', `#${newId}`);
-            $(`[href="#${id}"]`).attr('href', `#${newId}`);
-
-            $(`[fill="url(#${id})"]`).attr('fill', `url(#${newId})`);
-            $(`[stroke="url(#${id})"]`).attr('stroke', `url(#${newId})`);
-
-            $('[style]').each(function () {
-              const styleVal = $(this).attr('style');
-              if (styleVal && styleVal.includes(`url(#${id})`)) {
-                const newStyleVal = styleVal.replace(new RegExp(`url\\(#${id}\\)`, 'g'), `url(#${newId})`);
-                $(this).attr('style', newStyleVal);
-              }
-            });
-
-            $('style').each(function () {
-              const styleContent = $(this).html();
-              if (styleContent && styleContent.includes(`url(#${id})`)) {
-                const updatedStyleContent = styleContent.replace(new RegExp(`url\\(#${id}\\)`, 'g'), `url(#${newId})`);
-                $(this).html(updatedStyleContent);
-              }
-            });
-          }
-
-          const className = $(this).attr('class');
-          if (className) {
-            const newClassName = className.split(' ').map(cls => `${fileName}-${cls}`).join(' ');
-            $(this).attr('class', newClassName);
-
-            $('style').each(function () {
-              const styleContent = $(this).html();
-              const updatedStyleContent = className.split(' ').reduce((content, cls) => {
-                const regex = new RegExp(`\\.${cls}`, 'g');
-                return content.replace(regex, `.${fileName}-${cls}`);
-              }, styleContent);
-              $(this).html(updatedStyleContent);
-            });
-          }
+        $('[id]').each(function () {
+          const oldId = $(this).attr('id');
+          const newId = `${fileName}-${oldId}`;
+          idMap[oldId] = newId;
         });
-      },
+
+        Object.entries(idMap).forEach(([oldId, newId]) => {
+          $(`[id="${oldId}"]`).attr('id', newId);
+        });
+
+        Object.entries(idMap).forEach(([oldId, newId]) => {
+          $(`[xlink\\:href="#${oldId}"]`).attr('xlink:href', `#${newId}`);
+          $(`[href="#${oldId}"]`).attr('href', `#${newId}`);
+
+          $(`[fill="url(#${oldId})"]`).attr('fill', `url(#${newId})`);
+          $(`[stroke="url(#${oldId})"]`).attr('stroke', `url(#${newId})`);
+
+          $('[style]').each(function () {
+            const styleVal = $(this).attr('style');
+            if (styleVal && styleVal.includes(`url(#${oldId})`)) {
+              const newStyleVal = styleVal.replace(new RegExp(`url\\(#${oldId}\\)`, 'g'), `url(#${newId})`);
+              $(this).attr('style', newStyleVal);
+            }
+          });
+
+          $('style').each(function () {
+            const styleContent = $(this).html();
+            if (styleContent && styleContent.includes(`url(#${oldId})`)) {
+              const updatedStyleContent = styleContent.replace(new RegExp(`url\\(#${oldId}\\)`, 'g'), `url(#${newId})`);
+              $(this).html(updatedStyleContent);
+            }
+          });
+        });
+        },
       parserOptions: { xmlMode: true }
     }))
-    .pipe(svgstore({inlineSvg: true}))
+    .pipe(svgstore({ inlineSvg: true }))
     .pipe(rename('sprite.svg'))
     .pipe(gulp.dest(paths.sprite.dest));
 };
