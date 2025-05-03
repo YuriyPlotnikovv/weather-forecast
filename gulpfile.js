@@ -44,7 +44,7 @@ const paths = {
     watch: 'src/img/**/*.{jpg,jpeg,png,svg}'
   },
   sprite: {
-    src: 'src/img/svg/**/*.svg',
+    src: 'src/img/svg/*.svg',
     dest: 'public/img'
   },
   copy: {
@@ -53,6 +53,8 @@ const paths = {
       'src/css/vendor/*.css',
       'src/fonts/*.{woff,woff2}',
       'src/img/*.gif',
+      'src/img/svg/weather/*.svg',
+      'src/img/svg/weather-symbols/*.svg',
     ],
     dest: 'public/'
   },

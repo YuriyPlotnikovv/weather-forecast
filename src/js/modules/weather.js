@@ -183,9 +183,7 @@ function showCurrentData(data) {
       <p class="current-weather__location-address">${address}</p>
     </button>
     <p class="current-weather__time">${nowTitle} ${time}</p>
-      <svg class="current-weather__icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <use xlink:href="/public/img/sprite.svg#${currentWeather.icon}"/>
-      </svg>
+      <img class="current-weather__icon" src="/public/img/svg/weather/${currentWeather.icon}.svg" alt="${currentWeather.icon}">
     <div class="current-weather__detail">
       ${createWeatherDetail(currentWeather.air_temperature, 'temperature', prefix, `${temperatureUnit}`)}
       ${createWeatherDetail(currentWeather.wind_speed, 'wind-speed', prefix, `${windSpeedUnit}`)}
@@ -216,9 +214,7 @@ function createWeatherDetail(value, type, prefix, units, degrees = '') {
 
   return `
     <div class="${prefix}__detail-item">
-      <svg class="${prefix}__detail-icon" ${degrees ? `style="transform:rotate(${degrees}deg)"` : ''} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <use xlink:href="/public/img/sprite.svg#${iconPath}"/>
-      </svg>
+      <img class="${prefix}__detail-icon" ${degrees ? `style="transform:rotate(${degrees}deg)"` : ''} src="/public/img/weather-symbols/${iconPath}" alt="">
       <span class="${prefix}__detail-value">${value}</span>
       ${units ? `<span class="${prefix}__detail-units">${units}</span>` : ''}
     </div>`;
@@ -232,9 +228,7 @@ function createForecastElement(item, prefix) {
   element.classList.add(`${prefix}__item`, 'swiper-slide');
   element.innerHTML = `
     <p class="${prefix}${item.time ? '__time' : '__date'}">${item.time || item.date}</p>
-    <svg class="${prefix}__icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <use xlink:href="/public/img/sprite.svg#${item.icon}"/>
-    </svg>
+    <img class="${prefix}__icon" src="/public/img/svg/weather/${item.icon}" alt="${item.icon}">
     <div class="${prefix}__detail">
       ${
     typeof item.air_temperature === 'object' && item.air_temperature !== null
