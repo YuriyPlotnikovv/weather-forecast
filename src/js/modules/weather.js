@@ -214,7 +214,7 @@ function createWeatherDetail(value, type, prefix, units, degrees = '') {
 
   return `
     <div class="${prefix}__detail-item">
-      <img class="${prefix}__detail-icon" ${degrees ? `style="transform:rotate(${degrees}deg)"` : ''} src="/public/img/weather-symbols/${iconPath}" alt="">
+      <img class="${prefix}__detail-icon" ${degrees ? `style="transform:rotate(${degrees}deg)"` : ''} src="/public/img/weather-symbols/${iconPath}.svg" alt="">
       <span class="${prefix}__detail-value">${value}</span>
       ${units ? `<span class="${prefix}__detail-units">${units}</span>` : ''}
     </div>`;
@@ -228,7 +228,7 @@ function createForecastElement(item, prefix) {
   element.classList.add(`${prefix}__item`, 'swiper-slide');
   element.innerHTML = `
     <p class="${prefix}${item.time ? '__time' : '__date'}">${item.time || item.date}</p>
-    <img class="${prefix}__icon" src="/public/img/svg/weather/${item.icon}" alt="${item.icon}">
+    <img class="${prefix}__icon" src="/public/img/svg/weather/${item.icon}.svg" alt="${item.icon}">
     <div class="${prefix}__detail">
       ${
     typeof item.air_temperature === 'object' && item.air_temperature !== null
