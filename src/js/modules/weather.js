@@ -214,7 +214,7 @@ function createWeatherDetail(value, type, prefix, units, degrees = '') {
 
   return `
     <div class="${prefix}__detail-item">
-      <img class="${prefix}__detail-icon" ${degrees ? `style="transform:rotate(${degrees}deg)"` : ''} src="/public/img/weather-symbols/${iconPath}.svg" alt="">
+      <img class="${prefix}__detail-icon" ${degrees ? `style="transform:rotate(${degrees}deg)"` : ''} src="/public/img/svg/weather-symbols/${iconPath}.svg" alt="">
       <span class="${prefix}__detail-value">${value}</span>
       ${units ? `<span class="${prefix}__detail-units">${units}</span>` : ''}
     </div>`;
