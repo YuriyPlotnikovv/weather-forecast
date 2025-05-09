@@ -20,15 +20,11 @@ A website with a weather forecast. It shows the current weather, the forecast fo
 
 ### About the project
 
-#### Difficulty:
-
-- Medium
-
 #### Pages:
 
 - Main
 
-#### Additional:
+#### Functionality:
 
 - Swiper is connected
 - Integration with APIs: met.no (weather), openstreetmap.org (address), ipdata.co (coordinates by IP), timezonedb.com (time zone)
@@ -68,15 +64,11 @@ Website: https://yuriyplotnikovv.ru
 
 ### О проекте
 
-#### Сложность:
-
-- Medium
-
 #### Страницы:
 
 - Главная
 
-#### Дополнительно:
+#### Функциональность:
 
 - Подключен Swiper
 - Интеграция с Api: met.no (погода), openstreetmap.org (адрес), ipdata.co (координаты по ip), timezonedb.com (временной регион)
