@@ -1,53 +1,101 @@
+# Weather forecast
+
+<img src=".info/poster.webp" alt="Poster" width="600" />
+
 [🇬🇧 English](#english) | [🇷🇺 Русский](#русский)
 
 ---
 
 ## English
 
-# Weather Forecast Website Project
+### Weather forecast
 
-A project built with PHP and JavaScript:
+Project: https://weather-forecast.yuriyplotnikovv.ru/
 
-- Integrated Swiper for smooth sliders
-- API integrations:
-    - [met.no](https://api.met.no/weatherapi/locationforecast/2.0/) (weather forecast)
-    - [openstreetmap.org](https://nominatim.openstreetmap.org/) (address lookup)
-    - [ipdata.co](https://ipdata.co/) (IP-based geolocation)
-    - [timezonedb.com](https://timezonedb.com/) (time zone information)
-- English language support (translations via variables), language detection based on browser preferences
-- Data loaded from JSON files, with caching implemented
-- Weather icons by [Bas](https://basmilius.github.io/weather-icons/)
+Personal project in PHP and JS
+
+A website with a weather forecast. It shows the current weather, the forecast for the day and the forecast for the week. The location is determined by ip or geolocation.
 
 ---
 
-**Project deployment:** [https://weather-forecast.yuriyplotnikovv.ru/](https://weather-forecast.yuriyplotnikovv.ru/)
+### About the project
+
+#### Difficulty:
+
+- Medium
+
+#### Pages:
+
+- Main
+
+#### Additional:
+
+- Swiper is connected
+- Integration with APIs: met.no (weather), openstreetmap.org (address), ipdata.co (coordinates by IP), timezonedb.com (time zone)
+- English language (translations from variables), language detection based on browser preferences
+- Cached data from JSON files
+
+#### Not Implemented:
+
+- Weather map
 
 ---
 
-Displays current weather, 24-hour forecast, and weekly forecast. Location is determined via IP or geolocation.
+### License
+
+This project is licensed under the [GNU Affero General Public License v3 (AGPLv3)](https://www.gnu.org/licenses/agpl-3.0.html).
+
+---
+
+### Contacts
+
+Author: Yuriy Plotnikov  
+Website: https://yuriyplotnikovv.ru  
 
 ---
 
 ## Русский
 
-# Проект сайта с прогнозом погоды
+### Прогноз погоды
 
-Проект на PHP и JavaScript:
+Проект: https://weather-forecast.yuriyplotnikovv.ru/
 
-- Подключен Swiper для удобных слайдеров
-- Интеграция с API:
-    - [met.no](https://api.met.no/weatherapi/locationforecast/2.0/) (прогноз погоды)
-    - [openstreetmap.org](https://nominatim.openstreetmap.org/) (определение адреса)
-    - [ipdata.co](https://ipdata.co/) (определение координат по IP)
-    - [timezonedb.com](https://timezonedb.com/) (информация о временной зоне)
-- Поддержка английского языка (переводы через переменные), определение языка на основе предпочтений браузера
-- Данные загружаются из JSON файлов, реализовано кеширование
-- Иконки погоды от [Bas](https://basmilius.github.io/weather-icons/)
+Личный проект на PHP и JS
+
+Сайт с прогнозом погоды. Показывается текущая погода, прогноз на сутки и прогноз на неделю. Местоположение определяется по ip или по геолокации.
 
 ---
 
-**Деплой проекта:** [https://weather-forecast.yuriyplotnikovv.ru/](https://weather-forecast.yuriyplotnikovv.ru/)
+### О проекте
+
+#### Сложность:
+
+- Medium
+
+#### Страницы:
+
+- Главная
+
+#### Дополнительно:
+
+- Подключен Swiper
+- Интеграция с Api: met.no (погода), openstreetmap.org (адрес), ipdata.co (координаты по ip), timezonedb.com (временной регион)
+- Английский язык (переводы из переменных), определение языка на основе предпочтений в браузере
+- Кешированные данные из JSON файлов
+
+#### Не реализовано:
+
+- Карта погоды
 
 ---
 
-Отображается текущая погода, прогноз на сутки и на неделю. Местоположение определяется по IP или геолокации.
+### Лицензия
+
+Проект распространяется под лицензией [GNU Affero General Public License v3 (AGPLv3)](https://www.gnu.org/licenses/agpl-3.0.html).
+
+---
+
+### Контакты
+
+Автор: Yuriy Plotnikov  
+Сайт: https://yuriyplotnikovv.ru  
