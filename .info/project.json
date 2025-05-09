@@ -1,0 +1,53 @@
+{
+    "title-ru": "Прогноз погоды",
+    "title-en": "Weather forecast",
+    "textFirst-ru": "Личный проект на PHP и JS",
+    "textFirst-en": "Personal project in PHP and JS",
+    "textSecond-ru": "Сайт с прогнозом погоды. Показывается текущая погода, прогноз на сутки и прогноз на неделю. Местоположение определяется по ip или по геолокации.",
+    "textSecond-en": "A website with a weather forecast. It shows the current weather, the forecast for the day and the forecast for the week. The location is determined by ip or geolocation.",
+    "deploy": "https://weather-forecast.yuriyplotnikovv.ru/",
+    "features": [
+        {
+            "name-ru": "Сложность",
+            "name-en": "Difficulty",
+            "description-ru": "Medium",
+            "description-en": "Medium"
+        },
+        {
+            "name-ru": "Страницы",
+            "name-en": "Pages",
+            "description-ru": [
+                "Главная"
+            ],
+            "description-en": [
+                "Main"
+            ]
+        },
+        {
+            "name-ru": "Дополнительно",
+            "name-en": "Additional",
+            "description-ru": [
+                "Подключен Swiper",
+                "Интеграция с Api: met.no (погода), openstreetmap.org (адрес), ipdata.co (координаты по ip), timezonedb.com (временной регион)",
+                "Английский язык (переводы из переменных), определение языка на основе предпочтений в браузере",
+                "Кешированные данные из JSON файлов"
+            ],
+            "description-en": [
+                "Swiper is connected",
+                "Integration with APIs: met.no (weather), openstreetmap.org (address), ipdata.co (coordinates by IP), timezonedb.com (time zone)",
+                "English language (translations from variables), language detection based on browser preferences",
+                "Cached data from JSON files"
+            ]
+        },
+        {
+            "name-ru": "Не реализовано",
+            "name-en": "Not Implemented",
+            "description-ru": [
+                "Карта погоды"
+            ],
+            "description-en": [
+                "Weather map"
+            ]
+        }
+    ]
+}

@@ -3,25 +3,28 @@ name: Deploy weather-forecast to Beget via FTP
 on:
     push:
         branches: [ "main" ]
+        paths-ignore:
+            - '.info/**'
+            - '.github/workflows/generateReadme.yml'
+            - 'README.md'
     pull_request:
         branches: [ "main" ]
 
 jobs:
     build:
         runs-on: ubuntu-latest
-        environment: weather-app
 
         steps:
             - name: Checkout code
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
 
             - name: Set up Node.js
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@v4
               with:
                   node-version: '23'
 
             - name: Cache Node.js modules
-              uses: actions/cache@v3
+              uses: actions/cache@v4
               with:
                   path: ~/.npm
                   key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -38,23 +41,25 @@ jobs:
               env:
                   API_KEY_IP: ${{ secrets.API_KEY_IP }}
                   API_KEY_TIME: ${{ secrets.API_KEY_TIME }}
-              run: node generateApiKeys.js
+              run: node .github/scripts/generateApiKeys.js
 
-            - name: FTP Deploy
+            - name: SFTP Deploy
               uses: SamKirkland/FTP-Deploy-Action@v4.3.5
               with:
-                  server: yuriypvh.beget.tech
-                  username: ${{ secrets.FTP_USERNAME }}
-                  password: ${{ secrets.FTP_PASSWORD }}
+                  server: ${{ secrets.SFTP_SERVER }}
+                  username: ${{ secrets.SFTP_USER }}
+                  password: ${{ secrets.SFTP_PASSWORD }}
                   protocol: ftps
                   local-dir: ./
                   exclude: |
                       **/.git*
+                      **/.github/**
+                      **/.info/**
                       **/node_modules/**
                       **/src/**
-                      **/data/weather.json
+                      **/.editorconfig
                       **/package.json
                       **/package-lock.json
                       **/gulpfile.js
-                      **/generateApiKeys.js
                       **/README.md
+                      **/LICENSE
