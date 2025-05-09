@@ -31,6 +31,8 @@ jobs:
                       ${{ runner.os }}-node-
 
             - name: Generate README.md
+              env:
+                  GITHUB_WORKSPACE: ${{ github.workspace }}
               run: node .github/scripts/generateReadme.js
 
             - name: Commit and push changes

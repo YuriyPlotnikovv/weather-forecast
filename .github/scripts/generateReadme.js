@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
-const projectJsonPath = path.join(__dirname, '..', '..', '.info', 'project.json');
-const templatePath = path.join(__dirname, '..', '..', '.info', 'README-template.md');
-const readmePath = path.join(__dirname, '..', '..', 'README.md');
+const projectJsonPath = path.join(process.env.GITHUB_WORKSPACE, '.info', 'project.json');
+const templatePath = path.join(process.env.GITHUB_WORKSPACE, '.info', 'README-template.md');
+const readmePath = path.join(process.env.GITHUB_WORKSPACE, 'README.md');
 
 function formatDesc(desc) {
   if (Array.isArray(desc)) {

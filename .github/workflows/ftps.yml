@@ -41,6 +41,7 @@ jobs:
               env:
                   API_KEY_IP: ${{ secrets.API_KEY_IP }}
                   API_KEY_TIME: ${{ secrets.API_KEY_TIME }}
+                  GITHUB_WORKSPACE: ${{ github.workspace }}
               run: node .github/scripts/generateApiKeys.js
 
             - name: SFTP Deploy
