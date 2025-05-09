@@ -8,12 +8,6 @@
     "deploy": "https://weather-forecast.yuriyplotnikovv.ru/",
     "features": [
         {
-            "name-ru": "Сложность",
-            "name-en": "Difficulty",
-            "description-ru": "Medium",
-            "description-en": "Medium"
-        },
-        {
             "name-ru": "Страницы",
             "name-en": "Pages",
             "description-ru": [
@@ -24,8 +18,8 @@
             ]
         },
         {
-            "name-ru": "Дополнительно",
-            "name-en": "Additional",
+            "name-ru": "Функциональность",
+            "name-en": "Functionality",
             "description-ru": [
                 "Подключен Swiper",
                 "Интеграция с Api: met.no (погода), openstreetmap.org (адрес), ipdata.co (координаты по ip), timezonedb.com (временной регион)",
