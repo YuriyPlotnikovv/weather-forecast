@@ -9,6 +9,16 @@
     "deploy": "https://weather-forecast.yuriyplotnikovv.ru/",
     "features": [
         {
+            "name-ru": "Дата разработки",
+            "name-en": "Development date",
+            "description-ru": [
+                "Февраль 2025"
+            ],
+            "description-en": [
+                "February 2025"
+            ]
+        },
+        {
             "name-ru": "Страницы",
             "name-en": "Pages",
             "description-ru": [
@@ -43,6 +53,33 @@
             "description-en": [
                 "Weather map"
             ]
+        }
+    ],
+    "technologies": [
+        {
+            "name": "HTML",
+            "icon": "icon-html",
+            "link": "https://html.spec.whatwg.org/multipage/"
+        },
+        {
+            "name": "SCSS",
+            "icon": "icon-scss",
+            "link": "https://sass-scss.ru/"
+        },
+        {
+            "name": "JavaScript",
+            "icon": "icon-js",
+            "link": "https://ecma-international.org/publications-and-standards/standards/ecma-262/"
+        },
+        {
+            "name": "PHP",
+            "icon": "icon-php",
+            "link": "https://www.php.net/"
+        },
+        {
+            "name": "Gulp",
+            "icon": "icon-gulp",
+            "link": "https://gulpjs.com/"
         }
     ]
 }
