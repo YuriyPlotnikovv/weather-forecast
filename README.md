@@ -20,6 +20,10 @@ A website with a weather forecast. It shows the current weather, the forecast fo
 
 ### About the project
 
+#### Development date:
+
+- February 2025
+
 #### Pages:
 
 - Main
@@ -63,6 +67,10 @@ Website: https://yuriyplotnikovv.ru
 ---
 
 ### О проекте
+
+#### Дата разработки:
+
+- Февраль 2025
 
 #### Страницы:
 
