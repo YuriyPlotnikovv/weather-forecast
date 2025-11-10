@@ -1,6 +1,6 @@
 # Weather forecast
 
-<img src=".info/poster.webp" alt="Poster" width="600" />
+
 
 [🇬🇧 English](#english) | [🇷🇺 Русский](#русский)
 
@@ -20,23 +20,16 @@ A website with a weather forecast. It shows the current weather, the forecast fo
 
 ### About the project
 
-#### Development date:
-
-- February 2025
-
-#### Pages:
-
-- Main
-
-#### Functionality:
-
+#### Functionality
 - Swiper is connected
 - Integration with APIs: met.no (weather), openstreetmap.org (address), ipdata.co (coordinates by IP), timezonedb.com (time zone)
 - English language (translations from variables), language detection based on browser preferences
 - Cached data from JSON files
 
-#### Not Implemented:
+#### Pages
+- Main
 
+#### Not Implemented
 - Weather map
 
 ---
@@ -68,23 +61,16 @@ Website: https://yuriyplotnikovv.ru
 
 ### О проекте
 
-#### Дата разработки:
-
-- Февраль 2025
-
-#### Страницы:
-
-- Главная
-
-#### Функциональность:
-
+#### Функциональность
 - Подключен Swiper
 - Интеграция с Api: met.no (погода), openstreetmap.org (адрес), ipdata.co (координаты по ip), timezonedb.com (временной регион)
 - Английский язык (переводы из переменных), определение языка на основе предпочтений в браузере
 - Кешированные данные из JSON файлов
 
-#### Не реализовано:
+#### Страницы
+- Главная
 
+#### Не реализовано
 - Карта погоды
 
 ---
