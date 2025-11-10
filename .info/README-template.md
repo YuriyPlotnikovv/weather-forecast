@@ -20,7 +20,14 @@ Project: {{deploy}}
 
 ### About the project
 
-{{features-en}}
+#### Functionality
+{{functionality-en}}
+
+#### Pages
+{{pages-en}}
+
+#### Not Implemented
+{{notImplemented-en}}
 
 ---
 
@@ -51,7 +58,14 @@ Website: https://yuriyplotnikovv.ru
 
 ### О проекте
 
-{{features-ru}}
+#### Функциональность
+{{functionality-ru}}
+
+#### Страницы
+{{pages-ru}}
+
+#### Не реализовано
+{{notImplemented-ru}}
 
 ---
 

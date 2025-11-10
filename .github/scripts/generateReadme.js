@@ -5,27 +5,9 @@ const projectJsonPath = path.join(process.env.GITHUB_WORKSPACE, '.info', 'projec
 const templatePath = path.join(process.env.GITHUB_WORKSPACE, '.info', 'README-template.md');
 const readmePath = path.join(process.env.GITHUB_WORKSPACE, 'README.md');
 
-function formatDesc(desc) {
-  if (Array.isArray(desc)) {
-    return desc.map(d => `- ${d}`).join('\n');
-  }
-  return desc;
-}
-
-function featuresList(data, lang) {
-  if (!Array.isArray(data.features)) return '';
-  return data.features.map(f => {
-    const name = f[`name-${lang}`];
-    const desc = f[`description-${lang}`];
-    if (!name || !desc) return '';
-
-    if (Array.isArray(desc)) {
-      const descList = desc.map(item => `- ${item}`).join('\n');
-      return `#### ${name}:\n\n${descList}`;
-    }
-
-    return `#### ${name}:\n\n- ${desc}`;
-  }).filter(Boolean).join('\n\n');
+function formatStringList(items) {
+  if (!Array.isArray(items) || items.length === 0) return '';
+  return items.map(item => `- ${item}`).join('\n');
 }
 
 function fillTemplate(template, vars) {
@@ -47,18 +29,22 @@ function generateReadme() {
 
   const template = fs.readFileSync(templatePath, 'utf8');
 
-  const posterImg = `<img src=".info/poster.webp" alt="Poster" width="600" />`;
+  const posterImg = data.image ? `<img src=".info/${data.image}" alt="Poster" width="600" />` : '';
 
   const vars = {
-    'title-en': data['title-en'],
-    'title-ru': data['title-ru'],
-    'textFirst-en': data['textFirst-en'],
-    'textFirst-ru': data['textFirst-ru'],
-    'textSecond-en': data['textSecond-en'],
-    'textSecond-ru': data['textSecond-ru'],
-    'features-en': featuresList(data, 'en'),
-    'features-ru': featuresList(data, 'ru'),
-    'deploy': data.deploy,
+    'title-en': data.title.en || '',
+    'title-ru': data.title.ru || '',
+    'textFirst-en': data.textFirst.en || '',
+    'textFirst-ru': data.textFirst.ru || '',
+    'textSecond-en': data.textSecond.en || '',
+    'textSecond-ru': data.textSecond.ru || '',
+    'functionality-en': formatStringList(data.functionality.en),
+    'functionality-ru': formatStringList(data.functionality.ru),
+    'pages-en': formatStringList(data.pages.en),
+    'pages-ru': formatStringList(data.pages.ru),
+    'notImplemented-en': formatStringList(data.notImplemented.en),
+    'notImplemented-ru': formatStringList(data.notImplemented.ru),
+    'deploy': data.deploy || '',
     'poster-img': posterImg
   };
 

@@ -1,85 +1,55 @@
 {
-    "id": 9,
-    "title-ru": "Прогноз погоды",
-    "title-en": "Weather forecast",
-    "textFirst-ru": "Личный проект на PHP и JS",
-    "textFirst-en": "Personal project in PHP and JS",
-    "textSecond-ru": "Сайт с прогнозом погоды. Показывается текущая погода, прогноз на сутки и прогноз на неделю. Местоположение определяется по ip или по геолокации.",
-    "textSecond-en": "A website with a weather forecast. It shows the current weather, the forecast for the day and the forecast for the week. The location is determined by ip or geolocation.",
-    "deploy": "https://weather-forecast.yuriyplotnikovv.ru/",
-    "features": [
-        {
-            "name-ru": "Дата разработки",
-            "name-en": "Development date",
-            "description-ru": [
-                "Февраль 2025"
-            ],
-            "description-en": [
-                "February 2025"
-            ]
-        },
-        {
-            "name-ru": "Страницы",
-            "name-en": "Pages",
-            "description-ru": [
-                "Главная"
-            ],
-            "description-en": [
-                "Main"
-            ]
-        },
-        {
-            "name-ru": "Функциональность",
-            "name-en": "Functionality",
-            "description-ru": [
-                "Подключен Swiper",
-                "Интеграция с Api: met.no (погода), openstreetmap.org (адрес), ipdata.co (координаты по ip), timezonedb.com (временной регион)",
-                "Английский язык (переводы из переменных), определение языка на основе предпочтений в браузере",
-                "Кешированные данные из JSON файлов"
-            ],
-            "description-en": [
-                "Swiper is connected",
-                "Integration with APIs: met.no (weather), openstreetmap.org (address), ipdata.co (coordinates by IP), timezonedb.com (time zone)",
-                "English language (translations from variables), language detection based on browser preferences",
-                "Cached data from JSON files"
-            ]
-        },
-        {
-            "name-ru": "Не реализовано",
-            "name-en": "Not Implemented",
-            "description-ru": [
-                "Карта погоды"
-            ],
-            "description-en": [
-                "Weather map"
-            ]
-        }
-    ],
+    "date": "02.2025",
+    "complexity": "3",
+    "category": "personal",
+    "deploy": "https:\/\/weather-forecast.yuriyplotnikovv.ru\/",
+    "title": {
+        "ru": "Прогноз погоды",
+        "en": "Weather forecast"
+    },
+    "textFirst": {
+        "ru": "Личный проект на PHP и JS",
+        "en": "Personal project in PHP and JS"
+    },
+    "textSecond": {
+        "ru": "Сайт с прогнозом погоды. Показывается текущая погода, прогноз на сутки и прогноз на неделю. Местоположение определяется по ip или по геолокации.",
+        "en": "A website with a weather forecast. It shows the current weather, the forecast for the day and the forecast for the week. The location is determined by ip or geolocation."
+    },
+    "functionality": {
+        "ru": [
+            "Подключен Swiper",
+            "Интеграция с Api: met.no (погода), openstreetmap.org (адрес), ipdata.co (координаты по ip), timezonedb.com (временной регион)",
+            "Английский язык (переводы из переменных), определение языка на основе предпочтений в браузере",
+            "Кешированные данные из JSON файлов"
+        ],
+        "en": [
+            "Swiper is connected",
+            "Integration with APIs: met.no (weather), openstreetmap.org (address), ipdata.co (coordinates by IP), timezonedb.com (time zone)",
+            "English language (translations from variables), language detection based on browser preferences",
+            "Cached data from JSON files"
+        ]
+    },
     "technologies": [
-        {
-            "name": "HTML",
-            "icon": "icon-html",
-            "link": "https://html.spec.whatwg.org/multipage/"
-        },
-        {
-            "name": "SCSS",
-            "icon": "icon-scss",
-            "link": "https://sass-scss.ru/"
-        },
-        {
-            "name": "JavaScript",
-            "icon": "icon-js",
-            "link": "https://ecma-international.org/publications-and-standards/standards/ecma-262/"
-        },
-        {
-            "name": "PHP",
-            "icon": "icon-php",
-            "link": "https://www.php.net/"
-        },
-        {
-            "name": "Gulp",
-            "icon": "icon-gulp",
-            "link": "https://gulpjs.com/"
-        }
-    ]
+        "html",
+        "scss",
+        "javascript",
+        "php",
+        "gulp"
+    ],
+    "pages": {
+        "ru": [
+            "Главная"
+        ],
+        "en": [
+            "Main"
+        ]
+    },
+    "notImplemented": {
+        "ru": [
+            "Карта погоды"
+        ],
+        "en": [
+            "Weather map"
+        ]
+    }
 }
