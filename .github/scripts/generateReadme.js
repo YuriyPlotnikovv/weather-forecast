@@ -26,10 +26,7 @@ function generateReadme() {
 
   const rawData = fs.readFileSync(projectJsonPath, 'utf8');
   const data = JSON.parse(rawData);
-
   const template = fs.readFileSync(templatePath, 'utf8');
-
-  const posterImg = data.image ? `<img src=".info/${data.image}" alt="Poster" width="600" />` : '';
 
   const vars = {
     'title-en': data.title.en || '',
@@ -45,7 +42,7 @@ function generateReadme() {
     'notImplemented-en': formatStringList(data.notImplemented.en),
     'notImplemented-ru': formatStringList(data.notImplemented.ru),
     'deploy': data.deploy || '',
-    'poster-img': posterImg
+    'poster-img': '<img src=".info/poster.webp" alt="Poster" width="600" />',
   };
 
   const readme = fillTemplate(template, vars);
