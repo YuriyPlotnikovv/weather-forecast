@@ -1,6 +1,6 @@
 # Weather forecast
 
-
+<img src=".info/poster.webp" alt="Poster" width="600" />
 
 [🇬🇧 English](#english) | [🇷🇺 Русский](#русский)
 
