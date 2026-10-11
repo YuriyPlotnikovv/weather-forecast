@@ -1,0 +1,17 @@
+.git
+.github
+.info
+.idea
+.vscode
+node_modules
+public
+data/weather.json
+*.log
+.editorconfig
+.gitignore
+.gitattributes
+.dockerignore
+Dockerfile
+README.md
+LICENSE
+errors.php

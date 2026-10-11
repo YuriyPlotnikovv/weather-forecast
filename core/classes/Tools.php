@@ -1,5 +1,4 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/core/apiKeys.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/core/languages.php';
 
 class Tools
@@ -71,7 +70,7 @@ class Tools
 
     public static function getIpLocation($ip)
     {
-        global $ipKey;
+        $ipKey = getenv('API_KEY_IP');
         $url = "https://api.ipdata.co/{$ip}?api-key={$ipKey}&fields=latitude,longitude";
         $data = self::fetchData($url);
 
@@ -96,7 +95,7 @@ class Tools
 
     public static function getTimeZone($latitude, $longitude)
     {
-        global $timeKey;
+        $timeKey = getenv('API_KEY_TIME');
         $url = "https://api.timezonedb.com/v2.1/get-time-zone?key={$timeKey}&format=json&by=position&lat={$latitude}&lng={$longitude}";
         $data = self::fetchData($url);
 
