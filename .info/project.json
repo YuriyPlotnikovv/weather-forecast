@@ -2,7 +2,7 @@
     "date": "02.2025",
     "complexity": "3",
     "category": "personal",
-    "deploy": "https:\/\/weather-forecast.yuriyplotnikovv.ru\/",
+    "deploy": "https:\/\/weather-forecast.yp-projects.ru\/",
     "title": {
         "ru": "Прогноз погоды",
         "en": "Weather forecast"

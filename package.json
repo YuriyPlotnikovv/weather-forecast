@@ -1,9 +1,9 @@
 {
-    "name": "WeatherForecast",
+    "name": "weather-forecast",
     "version": "1.0.0",
-    "description": "сайт прогноза погоды",
+    "description": "Сайт прогноза погоды от YuriyPlotnikovv",
     "main": "index.php",
-    "author": "Yuriy Plotnikov",
+    "author": "Yuriy Plotnikovv",
     "license": "UNLICENSED",
     "devDependencies": {
         "@babel/core": "^7.26.9",
