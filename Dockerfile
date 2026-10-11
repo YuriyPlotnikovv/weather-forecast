@@ -21,7 +21,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Модули Apache, которые использует .htaccess (rewrite, expires, deflate, headers)
-RUN a2enmod rewrite expires deflate headers \
+# access_compat/setenvif/filter обычно включены в Debian по умолчанию — a2enmod для них безопасен
+RUN a2enmod rewrite expires deflate headers access_compat setenvif filter \
     && printf '<Directory /var/www/html>\n    AllowOverride All\n    Require all granted\n</Directory>\n' \
         > /etc/apache2/conf-available/allow-htaccess.conf \
     && a2enconf allow-htaccess

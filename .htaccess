@@ -64,5 +64,5 @@ ErrorDocument 404 /404.php
 </IfModule>
 
 <Files .gitignore>
-    deny from all
+    Require all denied
 </Files>
