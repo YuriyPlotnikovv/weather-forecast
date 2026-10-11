@@ -10,7 +10,7 @@
 
 ### Weather forecast
 
-Project: https://weather-forecast.yuriyplotnikovv.ru/
+Project: https://weather-forecast.yp-projects.ru/
 
 Personal project in PHP and JS
 
@@ -51,7 +51,7 @@ Website: https://yuriyplotnikovv.ru
 
 ### Прогноз погоды
 
-Проект: https://weather-forecast.yuriyplotnikovv.ru/
+Проект: https://weather-forecast.yp-projects.ru/
 
 Личный проект на PHP и JS
 
