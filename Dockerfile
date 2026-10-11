@@ -42,7 +42,13 @@ RUN { \
 
 COPY --from=build /app/public /var/www/html/public
 COPY index.php .htaccess robots.txt favicon.ico favicon.svg apple-touch-icon-180x180.png site.webmanifest /var/www/html/
-COPY ajax core include lang /var/www/html/
+
+# Каждая директория отдельной командой: при нескольких директориях-источниках
+# COPY склеил бы их содержимое в dest без подпапок
+COPY ajax/ /var/www/html/ajax/
+COPY core/ /var/www/html/core/
+COPY include/ /var/www/html/include/
+COPY lang/ /var/www/html/lang/
 
 # Кэш погоды (data/weather.json) и errors.log пишутся в DOCUMENT_ROOT
 RUN mkdir -p /var/www/html/data \
